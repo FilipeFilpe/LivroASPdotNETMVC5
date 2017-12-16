@@ -1,0 +1,34 @@
+@model LivroASPdotNETMVC5.Models.Categoria
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=decive-width" />
+        <title>Details</title>
+    </head>
+    <body>
+        <div>
+            <h4>Categoria</h4>
+            <hr />
+            <dl class="dl-horizontal">
+                <td>
+                    @Html.DisplayNameFor(
+                        model => model.Nome)
+                </td>
+                <dd>
+                    @Html.DisplayFor(model => model.Nome)
+                </dd>
+            </dl>
+        </div>
+
+        <p>
+            @Html.ActionLink("Alterar", "Edit",
+                new {id = Model.CategoriaId}) | 
+            @Html.ActionLink("Retornar para a listagem", "index")
+        </p>
+    </body>
+</html>

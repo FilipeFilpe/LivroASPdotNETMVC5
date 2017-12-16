@@ -1,0 +1,41 @@
+@model LivroASPdotNETMVC5.Models.Categoria
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=decive-width" />
+        <title>Delete</title>
+    </head>
+    <body>
+        <h3>Confirma o desejo de excluir a categoria abaixo?</h3>
+        <div>
+            <h4>Categoria</h4>
+            <hr />
+            <dl class="dl-horizontal">
+                <td>
+                    @Html.DisplayNameFor(model => model.Nome)
+                </td>
+                <dd>
+                    @Html.DisplayFor(model => model.Nome)
+                </dd>
+            </dl>
+
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+                @Html.HiddenFor(model => model.CategoriaId)
+
+                <div class="form-actions no-color">
+                    <input type="submit"
+                        value="Exluir categoria"
+                        class="btn btn-default" />
+                    @Html.ActionLink("Retornar para a listagem", "Index")
+                </div>
+            }
+        </div>
+    </body>
+</html>
